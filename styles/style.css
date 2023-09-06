@@ -53,14 +53,14 @@ h1{
     margin-top: 6px;
     background-color: #121214;
     background-size: 100% 100%; /* ou 'contain' */
-    background-image: url("https://img.icons8.com/?size=64&id=16280&format=png&color=FFFFFF");
+    background-image: url("https://img.icons8.com/?size=96&id=HvLKZeTLqQZn&format=png&color=FFFFFF");
     background-position: center;
     background-repeat: no-repeat;
 }
 
 #behance-button:hover{
     background-color: #ffffff;
-    background-image: url("https://img.icons8.com/?size=96&id=yhIGwiqDKeHO&format=png");
+    background-image: url("https://img.icons8.com/?size=96&id=HvLKZeTLqQZn&format=png");
 }
 
 #github-button{
