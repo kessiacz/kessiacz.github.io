@@ -43,7 +43,27 @@ h1{
     transform: translateY(-3px);
 }
 
-#github-button{
+#behance-button{
+    display: inline-block; 
+    border: 1px solid #f1f1f1;
+    border-radius: 10%;
+    padding: 5px;      
+    width: 25px;
+    height: 25px;
+    margin-top: 6px;
+    background-color: #121214;
+    background-size: 100% 100%; /* ou 'contain' */
+    background-image: url("https://icons8.com/icon/qTcO3Z0hv3pZ/behance");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#behance-button:hover{
+    background-color: #0288d1;
+    background-image: url("https://icons8.com/icon/12443/behance");
+}
+
+#behance-button{
     display: inline-block;            
     border: 1px solid #f1f1f1;
     border-radius: 10%;
