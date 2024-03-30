@@ -1,46 +1,146 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta  name = "palavras-chave" content = " SOFTWARE, DJANGO, PYTHON, SQL, POSTGRES, GITHUB, LINKEDIN, INSTAGRAM ">
-    <meta  name = "autor" content = "Kessia Carvalho">
-    <meta  http-equiv = "X-UA-Compatible" content = "ie = edge">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#cabeed">
-    <meta name="msapplication-navbutton-color" content="#cabeed">
-    
     <title>Kessia Carvalho</title>
-    <link rel="shortcut icon" href="/images/logo.png">
-    <link rel="stylesheet" href="/styles/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
-
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/css/style.css">
+    <script defer src="scripts/script.js"></script>
 </head>
 <body>
-    
-    <div id="container">
 
-        <img id='profile' src="images/profile.png" alt="me">
-        
-
-        <h1 class='line'>Kessia Carvalho</h1>
-        <hr width="75%">
-        
-        <p class="line">Téc. em Informática | IFPB</p>
-        <hr width="75%">
-
-        <a id='behance-button' href="https://www.behance.net/kessiacarvalho" rel="nofollow" target="_blank" class="line"></a>
-        <a id='github-button' href="https://github.com/kessiacz" rel="nofollow" target="_blank" class="line"></a>
-        <a id='linkedin-button' href="https://linkedin.com/in/kessia-carvalho/" rel="nofollow" target="_blank" class="line"></a>
-        <a id='whatsapp-button' href="https://wa.me/5583993732449" rel="nofollow" target="_blank" class="line"></a>
-        <a id='insta-button' href="https://www.instagram.com/kessiacz" rel="nofollow" target="_blank" class="line"></a>
-
-        <div class="bottom">
-            <a class="disable_underlined" href="tel:+5583993732449">(83) 9 9373-2449</a>
-            <a class="disable_underlined" href="mailto:kessiac147@gmail.com" target="_blank">kessiac147@gmail.com</a>
-            <p></p>
-            <p class="year">© 2023</p>
+    <header>
+        <div class="container">
+            <div class="menu">
+                <i class="ri-menu-line"></i>
+                <i class="ri-close-line hidden"></i>
+            </div>
+            <nav>
+                <a href="#sobre">
+                    <h2>APRESENTAÇÃO</h2>
+                </a>
+            </nav>
+            <div class="toggle">
+                <input type="checkbox" name="checkbox" id="checkbox">
+                <label for="checkbox" class="label">
+                    <div class="box"></div>
+                </label>
+            </div>
         </div>
-        
+    </header>
+
+    <section id="sobre" class="js-section">
+        <div class="container">
+            <div class="banner">
+                <div class="intro">
+                    <div class="title">
+                        <h1></h1> 
+                        <span></span>
+                        <p></p>
+                    </div>
+                    <div class="actions">
+                        <a href="assets/cv/kessia-carvalho-cv.pdf" download>Download CV</a>
+                        <a href="mailto:kessia.codes@gmail.com" target="_blank">Entrar em contato</a>
+                    </div>
+                </div>
+                <div class="profile">
+                    <img src="assets/kessia-carvalho.png" alt="avatar">
+                </div>
+            </div>
+            <div class="about">
+                <h2>Sobre mim</h2>
+                <p> 22 anos, Téc. em Informática (IFPB) e Bacharelanda em Engenharia Elétrica (IFPB).<br>
+                    Habilidades: Python, Django, Flesk, HTML, CSS, JavaScript, SQlite3, PostgreSQL, Sistemas Linux, esp32 (microcontrolador) e entre outros. <br>
+                    Facilidade em aprender novas linguagens de programação e tecnologias, sendo proativa na busca por conhecimento e desenvolvimento profissional. <br> 
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="contacts" class="js-section">
+        <div class="contacts">
+            <div class="container">
+                <h2>Contatos</h2>
+                <div class="icons">
+                    <div class="icon">
+                        <a href="mailto:kessia.codes@gmail.com" target="_blank">
+                            <div class="box">
+                                <img src="assets/contacts/mail.svg" alt="e-mail">
+                            </div>
+                        </a>
+                        <a href="mailto:kessia.codes@gmail.com" target="_blank">
+                            <p>E-mail</p>
+                        </a>
+                        <a href="kessia.codes@gmail.com" target="_blank">
+                            <p>kessia.codes@gmail.com</p>
+                        </a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://api.whatsapp.com/send?phone=558393732449" target="_blank">
+                            <div class="box">
+                                <img src="assets/contacts/phone.svg" alt="telefone">
+                            </div>
+                        </a>
+                        <a href="https://api.whatsapp.com/send?phone=5583993732449" target="_blank">
+                            <p>Telefone</p>
+                        </a>
+                        <a href="https://api.whatsapp.com/send?phone=5583993732449" target="_blank">
+                            <p>(83) 99373-2449</p>
+                        </a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://www.linkedin.com/in/kessia-carvalho/" target="_blank">
+                            <div class="box">
+                                <img src="assets/contacts/linkedin.svg" alt="linkedin">
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kessia-carvalho/" target="_blank">
+                            <p>Linkedin</p>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kessia-carvalho/" target="_blank">
+                            <p>@kessia-carvalho</p>
+                        </a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://github.com/kessiacz" target="_blank">
+                            <div class="box">
+                                <img src="assets/contacts/github.svg" alt="github">
+                            </div>
+                        </a>
+                        <a href="https://github.com/kessiacz" target="_blank">
+                            <p>Github</p>
+                        </a>
+                        <a href="https://github.com/kessiacz" target="_blank">
+                            <p>@kessiacz</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="modal hidden">
+        <div class="top">
+            <div class="video">
+                <iframe src="" frameborder="0" width="100%" height="100%" allowfullscreen ></iframe>
+            </div>
+            <div class="info">
+                <div class="title">
+                    <h2></h2>
+                    <i class="ri-close-line"></i>
+                </div>    
+                <p></p>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <div class="menuOpen hidden">
+        <h2>Bem-vindo :)</h2>
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#contacts">Contatos</a>
+        </nav>
     </div>
 </body>
 </html>
