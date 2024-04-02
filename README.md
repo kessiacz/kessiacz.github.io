@@ -8,4 +8,4 @@
 
 - Subir para o GitHub (git pull).
 
-**Acesse o meu site [aqui](https://kessiac.github.io).**
+**Acesse o meu site [aqui](https://kessiacz.github.io).**
