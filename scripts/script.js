@@ -1,152 +1,155 @@
-
+/* ============================================================
+   CONFIGURAÇÃO LIGHT MODE
+   ============================================================ */
 const initLightMode = () => {
-    document.querySelector('input[type="checkbox"]').addEventListener('change', () => {
-        document.body.classList.toggle('light-mode')
-    })
-
+    const checkbox = document.querySelector('input[type="checkbox"]');
+    if (checkbox) {
+        checkbox.addEventListener('change', () => {
+            document.body.classList.toggle('light-mode');
+        });
+    }
 }
 
-initLightMode()
-
+/* ============================================================
+   CONTROLE DO MENU MOBILE (ABRIR/FECHAR)
+   ============================================================ */
 const initOpenMenu = () => {
-
-    const menuBtn = document.querySelector('header .menu i')
-    const closeBtn = document.querySelector('header .menu i:nth-child(2)')
+    const menuBtn = document.querySelector('header .menu i');
+    const closeBtn = document.querySelector('header .menu i:nth-child(2)');
     const menu = document.querySelector('.menuOpen');
-    const header = document.querySelector('header')
+    const header = document.querySelector('header');
 
     const close = () => {
-        menu.classList.add('hidden')
-        menuBtn.classList.remove('hidden')
-        closeBtn.classList.add('hidden')
-        document.body.style.overflow = 'visible';
-        header.classList.remove('open')
-
+        if (menu) {
+            menu.classList.add('hidden');
+            menuBtn.classList.remove('hidden');
+            closeBtn.classList.add('hidden');
+            document.body.style.overflow = 'visible';
+            header.classList.remove('open');
+        }
     }
 
     const open = () => {
-        menu.classList.remove('hidden')
-        menuBtn.classList.add('hidden')
-        closeBtn.classList.remove('hidden')
+        menu.classList.remove('hidden');
+        menuBtn.classList.add('hidden');
+        closeBtn.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
-        header.classList.add('open')
+        header.classList.add('open');
     }
 
-    menuBtn.addEventListener('click', open)
+    if (menuBtn && closeBtn) {
+        menuBtn.addEventListener('click', open);
+        closeBtn.addEventListener('click', close);
+    }
 
-    closeBtn.addEventListener('click', close)
+    // Fechar ao pressionar ESC
+    document.addEventListener('keydown', (event) => {
+        if (event.key === "Escape") close();
+    });
 
-    document.addEventListener ('keydown', (event) => event.key === "Escape" ? close() : '');
-
-    const links = document.querySelectorAll('nav a')
-
+    // Fechar menu ao clicar em qualquer link (incluindo o novo de Exercícios)
+    const links = document.querySelectorAll('nav a, .menuOpen nav a');
     links.forEach(link => {
-        link.addEventListener('click', close)
-    })
-
+        link.addEventListener('click', close);
+    });
 }
 
-initOpenMenu()
-
+/* ============================================================
+   ANIMAÇÃO DE SCROLL (REVELAR SEÇÕES)
+   ============================================================ */
 const initAnimationScroll = () => {
-    const sections = document.querySelectorAll('.js-section')
+    const sections = document.querySelectorAll('.js-section');
+    if (sections.length === 0) return;
 
-    const windowHalfSize = window.innerHeight * 0.6
+    const windowHalfSize = window.innerHeight * 0.7; // Ajustado para disparar um pouco antes
     
     const animateScroll = () => {
         sections.forEach(item => {
-            const sectionTop = item.getBoundingClientRect().top
-
-            const isSectionVisible = (sectionTop - windowHalfSize) < 0
+            const sectionTop = item.getBoundingClientRect().top;
+            const isSectionVisible = (sectionTop - windowHalfSize) < 0;
 
             if (isSectionVisible) {
-                item.classList.add('active')
+                item.classList.add('active');
             } else {
-                item.classList.remove('active')
+                // Removemos o 'else' caso queira que a animação ocorra apenas uma vez
+                // item.classList.remove('active'); 
             }
-
-        })
-        
+        });
     }
 
-    animateScroll()
-
-    window.addEventListener('scroll', animateScroll)
-
-
+    animateScroll();
+    window.addEventListener('scroll', animateScroll);
 }
 
-initAnimationScroll()
-
+/* ============================================================
+   SCROLL SUAVE PARA LINKS INTERNOS
+   ============================================================ */
 const initScrollSmooth = () => {
-
-    const linksInternos = document.querySelectorAll('nav a')
+    const linksInternos = document.querySelectorAll('a[href^="#"]');
 
     linksInternos.forEach(item => {
-
-        const scrollToSection = (event) => {
-            event.preventDefault()
+        item.addEventListener('click', (event) => {
+            event.preventDefault();
             const href = event.currentTarget.getAttribute('href');
-            const section = document.querySelector(href)
+            const section = document.querySelector(href);
 
-            window.scrollTo ({
-                top: section.offsetTop - 100
-            })
+            if (section) {
+                // Offset de 80px para não cobrir o título com o header fixo
+                const topo = section.offsetTop - 80;
 
-        }
-
-
-        item.addEventListener('click', scrollToSection)
-
-    })
-
+                window.scrollTo({
+                    top: topo,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 }
 
-initScrollSmooth()
-
+/* ============================================================
+   ANIMAÇÃO DE DIGITAÇÃO (TYPING)
+   ============================================================ */
 const initTypingAnimation = () => {
-    const title = document.querySelector('#sobre .banner h1')
-    const span = document.querySelector('#sobre .banner span')
-    const paragraph = document.querySelector('#sobre .banner p')
+    const title = document.querySelector('#sobre .banner h1');
+    const span = document.querySelector('#sobre .banner span');
+    const paragraph = document.querySelector('#sobre .banner p');
 
-
-    const typingAnimation = (element) => {
-
-        if (element == title) {
-            element.innerHTML = 'Olá, eu sou '
-            const textToArray = element.innerHTML.split('')
-            element.innerHTML = ''
-
-            textToArray.forEach((item, index) => {
-                setTimeout(() => element.innerHTML += item, 120 * index)
-            })
-
-        } else if (element == span) {
-            element.innerHTML = 'Kessia Carvalho :)'
-            const textToArray = element.innerHTML.split('')
-            element.innerHTML = ''
-
-            textToArray.forEach((item, index) => {
-                setTimeout(() => element.innerHTML += item, 150 * index)
-            })
-
-        } else {
-            element.innerHTML = 'Bacharelanda em Engenharia Elétrica e Programadora'
-            const textToArray = element.innerHTML.split('')
-            element.innerHTML = ''
-
-            textToArray.forEach((item, index) => {
-                setTimeout(() => element.innerHTML += item, 75 * index)
-            })
-
-        }
+    // Função auxiliar para evitar repetição de código
+    const typeWriter = (element, text, speed, callback) => {
+        element.innerHTML = '';
+        const textToArray = text.split('');
         
+        textToArray.forEach((char, index) => {
+            setTimeout(() => {
+                element.innerHTML += char;
+                // Se for o último caractere e houver um callback, executa
+                if (index === textToArray.length - 1 && callback) {
+                    callback();
+                }
+            }, speed * index);
+        });
     }
 
-    typingAnimation(title)
-    setTimeout(() => typingAnimation(span), 1600)
-    setTimeout(() => typingAnimation(paragraph), 3700)
-
+    // Sequência de animação
+    if (title && span && paragraph) {
+        // Inicia Título
+        typeWriter(title, 'Olá, eu sou ', 100, () => {
+            // Inicia Nome após Título
+            typeWriter(span, 'Kessia Carvalho :)', 120, () => {
+                // Inicia Descrição após Nome
+                typeWriter(paragraph, 'Bacharelanda em Engenharia Elétrica e Programadora', 50);
+            });
+        });
+    }
 }
 
-initTypingAnimation()
+/* ============================================================
+   INICIALIZAÇÃO DE TODAS AS FUNÇÕES
+   ============================================================ */
+document.addEventListener('DOMContentLoaded', () => {
+    initLightMode();
+    initOpenMenu();
+    initAnimationScroll();
+    initScrollSmooth();
+    initTypingAnimation();
+});
