@@ -47,7 +47,7 @@ const initOpenMenu = () => {
         if (event.key === "Escape") close();
     });
 
-    // Fechar menu ao clicar em qualquer link (incluindo o novo de Exercícios)
+    // Fechar menu ao clicar em qualquer link (incluindo a nova Página Inicial)
     const links = document.querySelectorAll('nav a, .menuOpen nav a');
     links.forEach(link => {
         link.addEventListener('click', close);
@@ -61,7 +61,7 @@ const initAnimationScroll = () => {
     const sections = document.querySelectorAll('.js-section');
     if (sections.length === 0) return;
 
-    const windowHalfSize = window.innerHeight * 0.7; // Ajustado para disparar um pouco antes
+    const windowHalfSize = window.innerHeight * 0.7;
     
     const animateScroll = () => {
         sections.forEach(item => {
@@ -70,9 +70,6 @@ const initAnimationScroll = () => {
 
             if (isSectionVisible) {
                 item.classList.add('active');
-            } else {
-                // Removemos o 'else' caso queira que a animação ocorra apenas uma vez
-                // item.classList.remove('active'); 
             }
         });
     }
@@ -85,6 +82,7 @@ const initAnimationScroll = () => {
    SCROLL SUAVE PARA LINKS INTERNOS
    ============================================================ */
 const initScrollSmooth = () => {
+    // Seleciona apenas links que começam com # (internos)
     const linksInternos = document.querySelectorAll('a[href^="#"]');
 
     linksInternos.forEach(item => {
@@ -94,7 +92,6 @@ const initScrollSmooth = () => {
             const section = document.querySelector(href);
 
             if (section) {
-                // Offset de 80px para não cobrir o título com o header fixo
                 const topo = section.offsetTop - 80;
 
                 window.scrollTo({
@@ -114,7 +111,6 @@ const initTypingAnimation = () => {
     const span = document.querySelector('#sobre .banner span');
     const paragraph = document.querySelector('#sobre .banner p');
 
-    // Função auxiliar para evitar repetição de código
     const typeWriter = (element, text, speed, callback) => {
         element.innerHTML = '';
         const textToArray = text.split('');
@@ -122,7 +118,6 @@ const initTypingAnimation = () => {
         textToArray.forEach((char, index) => {
             setTimeout(() => {
                 element.innerHTML += char;
-                // Se for o último caractere e houver um callback, executa
                 if (index === textToArray.length - 1 && callback) {
                     callback();
                 }
@@ -130,13 +125,9 @@ const initTypingAnimation = () => {
         });
     }
 
-    // Sequência de animação
     if (title && span && paragraph) {
-        // Inicia Título
         typeWriter(title, 'Olá, eu sou ', 100, () => {
-            // Inicia Nome após Título
             typeWriter(span, 'Kessia Carvalho :)', 120, () => {
-                // Inicia Descrição após Nome
                 typeWriter(paragraph, 'Bacharelanda em Engenharia Elétrica e Programadora', 50);
             });
         });
