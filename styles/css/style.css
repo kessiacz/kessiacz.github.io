@@ -147,7 +147,12 @@ section#sobre .actions a:hover { transform: scale(0.95); filter: brightness(1.2)
 
 section#sobre .profile img {
     max-width: 100%;
-    width: 35rem;
+    width: 32rem;           
+    height: 32rem;          
+    object-fit: cover;      
+    border-radius: 50%;     
+    border: 0.6rem solid #8257E6;
+    padding: 0.3rem;
     animation: scaleDelayed 1s 6.5s;
 }
 
