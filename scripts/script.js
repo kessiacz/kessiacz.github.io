@@ -42,12 +42,22 @@ const initOpenMenu = () => {
         closeBtn.addEventListener('click', close);
     }
 
+    // NOVO: Fechar ao clicar fora (no fundo do menu)
+    if (menu) {
+        menu.addEventListener('click', (event) => {
+            // Se o clique for no menuOpen (fundo) e não no menu-content
+            if (event.target === menu) {
+                close();
+            }
+        });
+    }
+
     // Fechar ao pressionar ESC
     document.addEventListener('keydown', (event) => {
         if (event.key === "Escape") close();
     });
 
-    // Fechar menu ao clicar em qualquer link (incluindo a nova Página Inicial)
+    // Fechar menu ao clicar em qualquer link
     const links = document.querySelectorAll('nav a, .menuOpen nav a');
     links.forEach(link => {
         link.addEventListener('click', close);
