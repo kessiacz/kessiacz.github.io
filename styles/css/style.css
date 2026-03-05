@@ -279,7 +279,8 @@ section#contacts h2 { font-size: 3.2rem; font-weight: 600; margin-bottom: 8rem; 
    8. LIGHT MODE
    ============================================================ */
 body.light-mode { background-color: #F9F9F9; color: #13131F; }
-body.light-mode header { background-color: #13131F; } 
+body.light-mode header h2 { color: #8257E6; }
+body.light-mode header { background-color: #13131F; }
 body.light-mode .banner h1, body.light-mode .banner p, body.light-mode h2 { color: #13131F; }
 body.light-mode .folder-card { background-color: #EEEEEE; border: 0.1rem solid #DDD; }
 body.light-mode .icon .box { background-color: #EEEEEE; }
