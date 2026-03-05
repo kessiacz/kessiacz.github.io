@@ -137,7 +137,7 @@ const initTypingAnimation = () => {
             // Inicia Nome após Título
             typeWriter(span, 'Kessia Carvalho :)', 120, () => {
                 // Inicia Descrição após Nome
-                typeWriter(paragraph, '<br> Bacharelanda em Engenharia Elétrica e Programadora', 50);
+                typeWriter(paragraph, 'Bacharelanda em Engenharia Elétrica e Programadora', 50);
             });
         });
     }
