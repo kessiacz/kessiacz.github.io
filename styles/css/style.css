@@ -219,24 +219,67 @@ section#contacts h2 { font-size: 3.2rem; font-weight: 600; margin-bottom: 8rem; 
 .icon span { font-size: 1.6rem; color: #828282; }
 
 /* ============================================================
-   7. INTERFACES (MODAL E MENU MOBILE)
+   7. INTERFACES (MENU MOBILE) - AJUSTADO
    ============================================================ */
 .menuOpen {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-    background: rgba(19, 19, 31, 0.95); backdrop-filter: blur(10px);
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    z-index: 200; animation: fade 0.5s;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100vh;
+    background: rgba(19, 19, 31, 0.98); 
+    backdrop-filter: blur(10px);
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: flex-start; /* Alinha ao topo */
+    padding-top: 12rem; /* Espaço para o título descer do topo */
+    z-index: 200; 
+    animation: fade 0.5s;
 }
 
-.menuOpen nav { display: flex; flex-direction: column; gap: 4rem; text-align: center; }
-.menuOpen a { font-size: 3.8rem; font-family: 'Poppins'; font-weight: 600; transition: .3s; }
-.menuOpen a:hover { color: #8257E6; transform: scale(1.1); }
+.menuOpen h2 { 
+    font-size: 2.4rem; 
+    font-family: 'Poppins'; 
+    font-weight: 600; 
+    color: #8257E6; 
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    margin-bottom: 10rem; /* Espaço gigante entre "Menu" e os links */
+}
+
+.menuOpen nav { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 4rem; 
+    text-align: center; 
+}
+
+.menuOpen a { 
+    font-size: 3.8rem; 
+    font-family: 'Poppins'; 
+    font-weight: 600; 
+    color: #F9F9F9;
+    transition: .3s; 
+}
+
+.menuOpen a:hover { 
+    color: #8257E6; 
+    transform: scale(1.1); 
+}
+
+/* Ajustes mobile para o Menu */
+@media (max-width: 480px) {
+    .menuOpen { padding-top: 8rem; }
+    .menuOpen h2 { margin-bottom: 6rem; font-size: 1.8rem; }
+    .menuOpen a { font-size: 3rem; }
+}
 
 /* ============================================================
    8. LIGHT MODE
    ============================================================ */
 body.light-mode { background-color: #F9F9F9; color: #13131F; }
-body.light-mode header { background-color: #13131F; } /* Header mantém escuro para contraste */
+body.light-mode header { background-color: #13131F; } 
 body.light-mode .banner h1, body.light-mode .banner p, body.light-mode h2 { color: #13131F; }
 body.light-mode .folder-card { background-color: #EEEEEE; border: 0.1rem solid #DDD; }
 body.light-mode .icon .box { background-color: #EEEEEE; }
