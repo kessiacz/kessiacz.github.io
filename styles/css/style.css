@@ -42,7 +42,7 @@ button { cursor: pointer; background: none; font: inherit; }
 
 ::-webkit-scrollbar { width: 1rem; }
 ::-webkit-scrollbar-track { background: #13131F; }
-::-webkit-scrollbar-thumb { background: #8257E6; border-radius: 1rem; }
+::-webkit-scrollbar-thumb { background-color: #8257E6; border-radius: 1rem; border: 0.2rem solid #13131F;}
 
 @keyframes fade { from { opacity: 0; } to { opacity: 1; visibility: visible; } }
 @keyframes scaleDelayed { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
