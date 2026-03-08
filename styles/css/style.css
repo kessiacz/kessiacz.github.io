@@ -40,7 +40,7 @@ button { cursor: pointer; background: none; font: inherit; }
 .container { width: 90%; margin: 0 auto; }
 .hidden { display: none !important; }
 
-::-webkit-scrollbar { width: 1.4rem; }
+::-webkit-scrollbar { width: 1rem; }
 ::-webkit-scrollbar-track { background: #13131F; }
 ::-webkit-scrollbar-thumb { background: #8257E6; border-radius: 1rem; }
 
@@ -224,7 +224,7 @@ section#contacts h2 { font-size: 3.2rem; font-weight: 600; margin-bottom: 8rem; 
 .icon span { font-size: 1.6rem; color: #828282; }
 
 /* ============================================================
-   7. INTERFACES (MENU MOBILE) - AJUSTADO
+   7. INTERFACES (MENU MOBILE)
    ============================================================ */
 .menuOpen {
     position: fixed; 
@@ -237,8 +237,8 @@ section#contacts h2 { font-size: 3.2rem; font-weight: 600; margin-bottom: 8rem; 
     display: flex; 
     flex-direction: column; 
     align-items: center; 
-    justify-content: flex-start; /* Alinha ao topo */
-    padding-top: 12rem; /* Espaço para o título descer do topo */
+    justify-content: flex-start;
+    padding-top: 12rem;
     z-index: 200; 
     animation: fade 0.5s;
 }
@@ -250,7 +250,7 @@ section#contacts h2 { font-size: 3.2rem; font-weight: 600; margin-bottom: 8rem; 
     color: #8257E6; 
     text-transform: uppercase;
     letter-spacing: 0.3rem;
-    margin-bottom: 10rem; /* Espaço gigante entre "Menu" e os links */
+    margin-bottom: 10rem;
 }
 
 .menuOpen nav { 
