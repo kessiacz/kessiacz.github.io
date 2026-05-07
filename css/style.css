@@ -537,9 +537,9 @@ section, header {
     }
 
     .project-card.featured {
-        grid-template-columns: 1fr; /* Empilha o texto e imagem no celular */
+        grid-template-columns: 1fr;
         display: flex;
-        flex-direction: column-reverse; /* Imagem fica embaixo do texto no celular */
+        flex-direction: column-reverse;
     }
 
     .project-image-container {
@@ -734,4 +734,32 @@ footer {
     .projects-grid { grid-template-columns: 1fr; }
     .project-card.featured { grid-template-columns: 1fr; }
     .nav-links { display: none; }
+}
+
+/* SCROLL */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark, #050505);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0a241b;
+    border-radius: 8px;
+    border: 3px solid var(--bg-dark, #050505);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #144232;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--teal);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #0a241b var(--bg-dark, #050505);
 }
